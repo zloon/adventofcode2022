@@ -3,7 +3,7 @@ from expedition import Expedition
 
 exp = Expedition()
 
-with open("input.txt", "r") as file:
+with open("../input.txt", "r") as file:
     elf = Elf()
     
     for line in file:
@@ -15,6 +15,4 @@ with open("input.txt", "r") as file:
         else:
             elf.add_calories(int(line))
 
-#print exp.calories_max
-# Adjustment for part 2
 print(sum(exp.leaderboard()))
