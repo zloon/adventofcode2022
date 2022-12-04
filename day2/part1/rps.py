@@ -5,13 +5,15 @@ class RockPaperScissors:
     throws_opponent = [ "A", "B", "C" ]
     throws_you = [ "X", "Y", "Z"]
 
-    points = {
+    points_outcome = {
         "win": 6,
         "draw": 3,
-        "loss": 0,
+        "loss": 0
+    }
+    points_throw = {
         "X": 1, # Rock
         "Y": 2, # Paper
-        "Z": 3 # Scissors
+        "Z": 3  # Scissors
     }
 
     def __init__(self) -> None:
@@ -23,13 +25,13 @@ class RockPaperScissors:
         throw_opp = self.throws_opponent.index(opponent)
 
         # Add score for your chosen throw
-        round_score = self.points[you]
+        round_score = self.points_throw[you]
 
         # Add score for outcome
         if throw_you == (throw_opp+1)%3: # Win if your index is 1 higher than your opponent's mod 3, as R<P<S<R
-            round_score += self.points['win']
+            round_score += self.points_outcome['win']
         elif throw_you == throw_opp: # draw
-            round_score += self.points['draw']
+            round_score += self.points_outcome['draw']
 
         self.total_score += round_score
 
