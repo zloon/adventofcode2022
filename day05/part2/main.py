@@ -1,5 +1,5 @@
 from crane import Crane, Stack
-
+    
 lines = open("../input.txt", "r")
 
 # Read first section of the file - the initial state
